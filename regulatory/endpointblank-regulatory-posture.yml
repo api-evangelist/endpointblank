@@ -1,0 +1,36 @@
+generated: '2026-10-16'
+method: probed
+source: https://endpointblank.com/privacy
+signals:
+  data_subject_request:
+    evidence:
+      - source: https://endpointblank.com/privacy
+        http_status: 200
+        fetched: "true"
+        quote: "You can request deletion of your account and we will delete or de‑identify associated personal information within a commercially reasonable period."
+        section: "5. Data retention"
+        note: Allows data subject deletion requests.
+  subprocessors:
+    evidence:
+      - source: https://endpointblank.com/privacy
+        http_status: 200
+        fetched: "true"
+        quote: "Your mobile number is disclosed only to Telnyx, our SMS delivery provider, and only to deliver the verification and sign‑in codes you request."
+        section: "5. Data retention"
+        note: Lists Telnyx as a subprocessor for SMS delivery.
+  data_retention:
+    evidence:
+      - source: https://endpointblank.com/privacy
+        http_status: 200
+        fetched: "true"
+        quote: "We retain account and configuration data for as long as your account is active. Operational and log data is retained according to the retention period of your plan, after which it is deleted or anonymized."
+        section: "5. Data retention"
+        note: Describes retention periods.
+  incident_notification:
+    evidence:
+      - source: https://endpointblank.com/privacy
+        http_status: 200
+        fetched: "true"
+        quote: "We protect data in transit using TLS and store credentials and passwords only as irreversible hashes."
+        section: "6. Security"
+        note: Mentions security measures but not explicit incident notification.

@@ -1,0 +1,1914 @@
+openapi: 3.1.0
+info:
+  title: Bengal Technologies API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 45 operation(s) read from 3 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Bengal Technologies has published no machine-readable contract
+    that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 3
+    documentation: 42
+    pages-with-code: 1
+    pages-read: 3
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://endpointblank.com/docs/management-api
+  - https://endpointblank.com/docs/agent-sign-in
+  - https://endpointblank.com/docs/management-api-reference
+servers:
+- url: https://app.endpointblank.com/api/v1
+paths:
+  /.well-known/oauth-protected-resource/mcp:
+    get:
+      operationId: get_well_known_oauth_protected_resource_mcp
+      tags:
+      - API
+      summary: GET /.well-known/oauth-protected-resource/mcp
+      x-source: https://endpointblank.com/docs/agent-sign-in
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetWellKnownOauthProtectedResourceMcpResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: curl -s https://api.provider.example/.well-known/oauth-protected-resource/mcp
+  /agent-oauth/authorize:
+    get:
+      operationId: get_agent_oauth_authorize
+      tags:
+      - Agent Oauth
+      summary: GET /agent-oauth/authorize
+      x-source: https://endpointblank.com/docs/agent-sign-in
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl \n For agent developers \n Discovery \n Find the authorization server \n Call the provider's API without a token. An MCP\
+          \ server answers 401 and names its protected resource metadata (RFC 9728), whose authorization_servers lists EndPointBlank's issuer.\
+          \ Then read the authorization server metadata (RFC 8414) at /.well-known/oauth-authorization-server on the issuer. It needs no credentials\
+          \ and allows"
+  /agent-oauth/{agentoauthid}:
+    post:
+      operationId: post_agent_oauth_agentoauthid
+      tags:
+      - Agent Oauth
+      summary: Register
+      x-source: https://endpointblank.com/docs/agent-sign-in
+      parameters:
+      - name: agentoauthid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostAgentOauthAgentoauthidRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostAgentOauthAgentoauthidResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at agentoauthId
+  /api/authorize:
+    post:
+      operationId: post_api_authorize
+      tags:
+      - Api
+      summary: Intake endpoint used to verify bearer tokens (POST /api/authorize).
+      x-source: https://endpointblank.com/docs/agent-sign-in
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/v1/clients:
+    post:
+      operationId: post_api_v1_clients
+      tags:
+      - Api
+      summary: POST /api/v1/clients creates a client or sends an email invite.
+      x-source: https://endpointblank.com/docs/management-api
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/v1/clients/{id}:
+    patch:
+      operationId: patch_api_v1_clients_id
+      tags:
+      - Api
+      summary: Update a client (PATCH /api/v1/clients/:id) is mentioned for owner_email changes.
+      x-source: https://endpointblank.com/docs/agent-sign-in
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/v1/clients/{clientId}/claim_invites:
+    post:
+      operationId: post_api_v1_clients_clientId_claim_invites
+      tags:
+      - Api
+      summary: POST /api/v1/clients/{client_id}/claim_invites emails a claim invite to a managed client.
+      x-source: https://endpointblank.com/docs/management-api
+      parameters:
+      - name: clientId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/v1/organization:
+    get:
+      operationId: get_api_v1_organization
+      tags:
+      - Api
+      summary: GET /api/v1/organization shows which organization and key you are using.
+      x-source: https://endpointblank.com/docs/management-api
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api_packages:
+    get:
+      operationId: get_api_packages
+      tags:
+      - Api Packages
+      summary: List API packages
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: after
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The next_cursor from the previous page.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiPackagesResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_api_packages
+      tags:
+      - Api Packages
+      summary: POST /api_packages
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Retrying a POST with the same key replays the first answer.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiPackagesRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiPackagesResponse'
+      x-evidence:
+        kind: documentation
+  /api_packages/{id}:
+    delete:
+      operationId: delete_api_packages_id
+      tags:
+      - Api Packages
+      summary: DELETE /api_packages/{id}
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteApiPackagesIdResponse'
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_api_packages_id
+      tags:
+      - Api Packages
+      summary: GET /api_packages/{id}
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiPackagesIdResponse'
+      x-evidence:
+        kind: documentation
+    patch:
+      operationId: patch_api_packages_id
+      tags:
+      - Api Packages
+      summary: PATCH /api_packages/{id}
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchApiPackagesIdRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchApiPackagesIdResponse'
+      x-evidence:
+        kind: documentation
+  /api_packages/{id}/endpoints:
+    get:
+      operationId: get_api_packages_id_endpoints
+      tags:
+      - Api Packages
+      summary: GET /api_packages/{id}/endpoints
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: after
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The next_cursor from the previous page.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiPackagesIdEndpointsResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_api_packages_id_endpoints
+      tags:
+      - Api Packages
+      summary: POST /api_packages/{id}/endpoints
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Retrying a POST with the same key replays the first answer.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiPackagesIdEndpointsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiPackagesIdEndpointsResponse'
+      x-evidence:
+        kind: documentation
+  /api_packages/{id}/endpoints/{accessId}:
+    delete:
+      operationId: delete_api_packages_id_endpoints_accessId
+      tags:
+      - Api Packages
+      summary: DELETE /api_packages/{id}/endpoints/{accessId}
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: accessId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteApiPackagesIdEndpointsAccessidResponse'
+      x-evidence:
+        kind: documentation
+  /applications:
+    get:
+      operationId: get_applications
+      tags:
+      - Applications
+      summary: List applications
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: after
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The next_cursor from the previous page.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApplicationsResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_applications
+      tags:
+      - Applications
+      summary: Create an application
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Retrying a POST with the same key replays the first answer.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApplicationsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApplicationsResponse'
+      x-evidence:
+        kind: documentation
+  /applications/{applicationId}/environments:
+    get:
+      operationId: get_applications_applicationId_environments
+      tags:
+      - Applications
+      summary: List the environments an application runs in
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: applicationId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: after
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApplicationsApplicationidEnvironmentsResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_applications_applicationId_environments
+      tags:
+      - Applications
+      summary: Place an application in an environment at a base URL
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: applicationId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApplicationsApplicationidEnvironmentsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApplicationsApplicationidEnvironmentsResponse'
+      x-evidence:
+        kind: documentation
+  /applications/{applicationId}/environments/{id}:
+    delete:
+      operationId: delete_applications_applicationId_environments_id
+      tags:
+      - Applications
+      summary: Remove an application from an environment
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: applicationId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteApplicationsApplicationidEnvironmentsIdResponse'
+      x-evidence:
+        kind: documentation
+  /applications/{id}:
+    delete:
+      operationId: delete_applications_id
+      tags:
+      - Applications
+      summary: Delete an application
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteApplicationsIdResponse'
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_applications_id
+      tags:
+      - Applications
+      summary: Get an application
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApplicationsIdResponse'
+      x-evidence:
+        kind: documentation
+    patch:
+      operationId: patch_applications_id
+      tags:
+      - Applications
+      summary: Rename an application or change whether it is public
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchApplicationsIdRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchApplicationsIdResponse'
+      x-evidence:
+        kind: documentation
+  /callback:
+    post:
+      operationId: post_callback
+      tags:
+      - Callback
+      summary: POST /callback
+      x-source: https://endpointblank.com/docs/agent-sign-in
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostCallbackRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostCallbackResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -s "$ISSUER/agent-oauth/register"  -H ''content-type: application/json''  -d ''{"client_name": "Example agent", "redirect_uris":
+          ["http://127.0.0.1:8976/callback"]}'''
+  /clients:
+    post:
+      operationId: post_clients
+      tags:
+      - Clients
+      summary: Invite a client
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostClientsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostClientsResponse'
+      x-evidence:
+        kind: documentation
+  /clients/{clientId}/credentials/{id}/rotate:
+    post:
+      operationId: post_clients_clientId_credentials_id_rotate
+      tags:
+      - Clients
+      summary: 'Managed client: Issue a new secret; the old one works for the grace window'
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: clientId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostClientsClientidCredentialsIdRotateResponse'
+      x-evidence:
+        kind: documentation
+  /clients/{clientId}/environments:
+    get:
+      operationId: get_clients_clientId_environments
+      tags:
+      - Clients
+      summary: 'Managed client: List environments'
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: clientId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: after
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetClientsClientidEnvironmentsResponse'
+      x-evidence:
+        kind: documentation
+  /clients/{clientId}/environments/{id}:
+    delete:
+      operationId: delete_clients_clientId_environments_id
+      tags:
+      - Clients
+      summary: 'Managed client: Delete an environment'
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: clientId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteClientsClientidEnvironmentsIdResponse'
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_clients_clientId_environments_id
+      tags:
+      - Clients
+      summary: 'Managed client: Get an environment'
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: clientId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetClientsClientidEnvironmentsIdResponse'
+      x-evidence:
+        kind: documentation
+    patch:
+      operationId: patch_clients_clientId_environments_id
+      tags:
+      - Clients
+      summary: 'Managed client: Update an environment'
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: clientId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchClientsClientidEnvironmentsIdRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchClientsClientidEnvironmentsIdResponse'
+      x-evidence:
+        kind: documentation
+  /clients/{clientId}/invite:
+    delete:
+      operationId: delete_clients_clientId_invite
+      tags:
+      - Clients
+      summary: DELETE /clients/{client_id}/invite revokes an email invite for a client.
+      x-source: https://endpointblank.com/docs/management-api
+      parameters:
+      - name: clientId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /clients/{clientId}/invite/link:
+    post:
+      operationId: post_clients_clientId_invite_link
+      tags:
+      - Clients
+      summary: POST /clients/{client_id}/invite/link makes a new invite link for a client.
+      x-source: https://endpointblank.com/docs/management-api
+      parameters:
+      - name: clientId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /clients/{clientId}/{id}:
+    post:
+      operationId: post_clients_clientId_id
+      tags:
+      - Clients
+      summary: Invite your customer to claim a managed client
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: clientId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostClientsClientidIdRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostClientsClientidIdResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 3 example path(s) differing only at id
+  /clients/{id}:
+    delete:
+      operationId: delete_clients_id
+      tags:
+      - Clients
+      summary: DELETE /clients/{id} removes a client; intake may require retry if steps were partially completed.
+      x-source: https://endpointblank.com/docs/management-api
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_clients_id
+      tags:
+      - Clients
+      summary: Get a client
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetClientsIdResponse'
+      x-evidence:
+        kind: documentation
+    patch:
+      operationId: patch_clients_id
+      tags:
+      - Clients
+      summary: PATCH /clients/{id} updates a client, e.g., to set owner_email.
+      x-source: https://endpointblank.com/docs/management-api
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /credentials:
+    get:
+      operationId: get_credentials
+      tags:
+      - Credentials
+      summary: List runtime client credentials (metadata only, never a secret)
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: after
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: application_environment_id
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCredentialsResponse'
+      x-evidence:
+        kind: documentation
+  /endpoints:
+    get:
+      operationId: get_endpoints
+      tags:
+      - Endpoints
+      summary: List the organization's endpoints
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: application_id
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Only this application's endpoints.
+      - name: version
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Only endpoints deployed in an application version of this name.
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: after
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The next_cursor from the previous page.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetEndpointsResponse'
+      x-evidence:
+        kind: documentation
+  /environments:
+    get:
+      operationId: get_environments
+      tags:
+      - Environments
+      summary: List environments
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: after
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetEnvironmentsResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_environments
+      tags:
+      - Environments
+      summary: Create an environment
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostEnvironmentsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostEnvironmentsResponse'
+      x-evidence:
+        kind: documentation
+  /environments/{id}:
+    delete:
+      operationId: delete_environments_id
+      tags:
+      - Environments
+      summary: Delete an environment
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteEnvironmentsIdResponse'
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_environments_id
+      tags:
+      - Environments
+      summary: Get an environment
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetEnvironmentsIdResponse'
+      x-evidence:
+        kind: documentation
+    patch:
+      operationId: patch_environments_id
+      tags:
+      - Environments
+      summary: Update an environment
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchEnvironmentsIdRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchEnvironmentsIdResponse'
+      x-evidence:
+        kind: documentation
+  /organization:
+    get:
+      operationId: get_organization
+      tags:
+      - Organization
+      summary: The organization this key belongs to
+      x-source: https://endpointblank.com/docs/management-api-reference
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetOrganizationResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    GetWellKnownOauthProtectedResourceMcpResponse:
+      type: object
+      properties:
+        client_id:
+          type: string
+        token_endpoint_auth_method:
+          type: string
+    PostAgentOauthAgentoauthidRequest:
+      type: object
+      properties:
+        redirect_uris:
+          type: array
+          description: One to five HTTPS URLs or loopback HTTP URLs, each ≤2,000 bytes.
+        client_name:
+          type: string
+          description: Up to 200 characters, no control or format characters.
+        grant_types:
+          type: array
+          description: If given, only authorization_code and refresh_token.
+        response_types:
+          type: array
+          description: If given, only code.
+      required:
+      - redirect_uris
+    PostAgentOauthAgentoauthidResponse:
+      type: object
+      properties:
+        client_id:
+          type: string
+          description: Issued client identifier.
+    GetApiPackagesResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: A page of API packages
+        '400':
+          type: string
+          description: Invalid pagination
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '429':
+          type: string
+          description: Rate limited
+    PostApiPackagesRequest:
+      type: object
+      properties:
+        name:
+          type: string
+      required:
+      - name
+    PostApiPackagesResponse:
+      type: object
+      properties:
+        '201':
+          type: string
+          description: The API package
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '422':
+          type: string
+          description: Invalid fields, or the name is taken
+        '429':
+          type: string
+          description: Rate limited
+    DeleteApiPackagesIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Deleted
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Not found
+        '422':
+          type: string
+          description: The package is assigned to clients
+        '429':
+          type: string
+          description: Rate limited
+    GetApiPackagesIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The API package
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '404':
+          type: string
+          description: Not found
+        '429':
+          type: string
+          description: Rate limited
+    PatchApiPackagesIdRequest:
+      type: object
+      properties:
+        name:
+          type: string
+      required:
+      - name
+    PatchApiPackagesIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The API package
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Not found
+        '422':
+          type: string
+          description: Invalid fields, or the name is taken
+        '429':
+          type: string
+          description: Rate limited
+    GetApiPackagesIdEndpointsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: A page of the package's endpoints
+        '400':
+          type: string
+          description: Invalid pagination
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '404':
+          type: string
+          description: Package not found
+        '429':
+          type: string
+          description: Rate limited
+    PostApiPackagesIdEndpointsRequest:
+      type: object
+      properties:
+        application_id:
+          type: string
+        environment_id:
+          type: string
+        endpoint_id:
+          type: string
+          description: Omit or null for every endpoint of the application.
+      required:
+      - application_id
+      - environment_id
+    PostApiPackagesIdEndpointsResponse:
+      type: object
+      properties:
+        '201':
+          type: string
+          description: The endpoint was added
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Package not found
+        '422':
+          type: string
+          description: Invalid fields, an id that does not exist, or already in the package
+        '429':
+          type: string
+          description: Rate limited
+    DeleteApiPackagesIdEndpointsAccessidResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Deleted
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Not found
+        '429':
+          type: string
+          description: Rate limited
+    GetApplicationsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: A page of applications
+        '400':
+          type: string
+          description: Invalid pagination
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '429':
+          type: string
+          description: Rate limited
+    PostApplicationsRequest:
+      type: object
+      properties:
+        environment_base_urls:
+          type: object
+          description: Environment id to base URL, e.g. https://api.example.com
+        name:
+          type: string
+        organization_group_id:
+          type: string
+        public:
+          type: boolean
+      required:
+      - environment_base_urls
+      - name
+    PostApplicationsResponse:
+      type: object
+      properties:
+        '201':
+          type: string
+          description: The created application
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '422':
+          type: string
+          description: Invalid fields, or intake refused the application
+        '429':
+          type: string
+          description: Rate limited
+    GetApplicationsApplicationidEnvironmentsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: A page of application environments
+        '400':
+          type: string
+          description: Invalid pagination
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '404':
+          type: string
+          description: Not found
+        '429':
+          type: string
+          description: Rate limited
+    PostApplicationsApplicationidEnvironmentsRequest:
+      type: object
+      properties:
+        base_url:
+          type: string
+        environment_id:
+          type: string
+      required:
+      - base_url
+      - environment_id
+    PostApplicationsApplicationidEnvironmentsResponse:
+      type: object
+      properties:
+        '201':
+          type: string
+          description: The application environment
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Application not found
+        '422':
+          type: string
+          description: Invalid fields, or intake refused the environment
+        '429':
+          type: string
+          description: Rate limited
+    DeleteApplicationsApplicationidEnvironmentsIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The application left the environment
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Not found
+        '422':
+          type: string
+          description: Still in use, or intake refused the removal
+        '429':
+          type: string
+          description: Rate limited
+    DeleteApplicationsIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The application was deleted
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Not found
+        '422':
+          type: string
+          description: Still in use, or intake refused the delete
+        '429':
+          type: string
+          description: Rate limited
+    GetApplicationsIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The application
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '404':
+          type: string
+          description: Not found
+        '429':
+          type: string
+          description: Rate limited
+    PatchApplicationsIdRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        public:
+          type: boolean
+    PatchApplicationsIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The updated application
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Not found
+        '422':
+          type: string
+          description: Invalid fields, or intake refused the change
+        '429':
+          type: string
+          description: Rate limited
+    PostCallbackRequest:
+      type: object
+      properties:
+        client_name:
+          type: string
+        redirect_uris:
+          type: array
+          items:
+            type: string
+    PostCallbackResponse:
+      type: object
+      properties:
+        client_id:
+          type: string
+        token_endpoint_auth_method:
+          type: string
+    PostClientsRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        contacts:
+          type: array
+        email:
+          type: string
+        grants:
+          type: array
+        managed:
+          type: boolean
+        owner_email:
+          type: string
+        packages:
+          type: array
+      required:
+      - name
+    PostClientsResponse:
+      type: object
+      properties:
+        '201':
+          type: string
+          description: The new client
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '402':
+          type: string
+          description: The plan's client limit is reached
+        '403':
+          type: string
+          description: The key is read-only
+        '409':
+          type: string
+          description: already_invited or idempotency_replay_unavailable
+        '422':
+          type: string
+          description: Various validation errors
+        '429':
+          type: string
+          description: invite_rate_limited
+        '503':
+          type: string
+          description: Intake unreachable; nothing was created
+    PostClientsClientidCredentialsIdRotateResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The credential, with the new client_secret shown once
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Not found
+        '409':
+          type: string
+          description: Idempotency-Key already used; the answer can't be replayed (idempotency_replay_unavailable), or an intake's own credential
+            (intake_credential); nothing was rotated
+        '422':
+          type: string
+          description: Intake refused the new secret
+        '429':
+          type: string
+          description: Rate limited
+        '503':
+          type: string
+          description: Intake unreachable; the secret was not rotated
+    GetClientsClientidEnvironmentsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: A page of environments
+        '400':
+          type: string
+          description: Invalid pagination
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '429':
+          type: string
+          description: Rate limited
+    DeleteClientsClientidEnvironmentsIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The environment was deleted
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Not found
+        '422':
+          type: string
+          description: Protected, still in use, or intake refused the delete
+        '429':
+          type: string
+          description: Rate limited
+    GetClientsClientidEnvironmentsIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The environment
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '404':
+          type: string
+          description: Not found
+        '429':
+          type: string
+          description: Rate limited
+    PatchClientsClientidEnvironmentsIdRequest:
+      type: object
+      properties:
+        domain:
+          type: string
+        is_default:
+          type: boolean
+        name:
+          type: string
+    PatchClientsClientidEnvironmentsIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The updated environment
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Not found
+        '422':
+          type: string
+          description: Invalid fields, protected, or intake refused the change
+        '429':
+          type: string
+          description: Rate limited
+    PostClientsClientidIdRequest:
+      type: object
+      properties:
+        email:
+          type: string
+        return_to:
+          type: string
+      required:
+      - email
+    PostClientsClientidIdResponse:
+      type: object
+      properties:
+        '201':
+          type: string
+          description: The invite was sent
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: The key is read-only
+        '404':
+          type: string
+          description: Not found
+        '422':
+          type: string
+          description: Various validation errors
+        '429':
+          type: string
+          description: Rate limited
+    GetClientsIdResponse:
+      type: object
+      properties:
+        client:
+          type: object
+    GetCredentialsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: A page of credentials and the next cursor
+        '400':
+          type: string
+          description: Invalid pagination
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '429':
+          type: string
+          description: Rate limited
+    GetEndpointsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: A page of endpoints
+        '400':
+          type: string
+          description: Invalid pagination
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '422':
+          type: string
+          description: application_id is not a UUID, or version is not a string
+        '429':
+          type: string
+          description: Rate limited
+    GetEnvironmentsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: A page of environments
+        '400':
+          type: string
+          description: Invalid pagination
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '429':
+          type: string
+          description: Rate limited
+    PostEnvironmentsRequest:
+      type: object
+      properties:
+        domain:
+          type: string
+        name:
+          type: string
+        is_default:
+          type: boolean
+      required:
+      - domain
+      - name
+    PostEnvironmentsResponse:
+      type: object
+      properties:
+        '201':
+          type: string
+          description: The created environment
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '422':
+          type: string
+          description: Invalid fields, or intake refused the environment
+        '429':
+          type: string
+          description: Rate limited
+    DeleteEnvironmentsIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The environment was deleted
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Not found
+        '422':
+          type: string
+          description: Protected, still in use, or intake refused the delete
+        '429':
+          type: string
+          description: Rate limited
+    GetEnvironmentsIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The environment
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '404':
+          type: string
+          description: Not found
+        '429':
+          type: string
+          description: Rate limited
+    PatchEnvironmentsIdRequest:
+      type: object
+      properties:
+        domain:
+          type: string
+        is_default:
+          type: boolean
+        name:
+          type: string
+    PatchEnvironmentsIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The updated environment
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Not found
+        '422':
+          type: string
+          description: Invalid fields, protected, or intake refused the change
+        '429':
+          type: string
+          description: Rate limited
+    GetOrganizationResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The organization and the key used
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '429':
+          type: string
+          description: Rate limited
+  securitySchemes:
+    Token_endpoint:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://app.endpointblank.com/agent-oauth/token
+          scopes: {}
+      x-source: https://endpointblank.com/docs/agent-sign-in
+tags:
+- name: API
+- name: Agent Oauth
+- name: Api
+- name: Api Packages
+- name: Applications
+- name: Callback
+- name: Clients
+- name: Credentials
+- name: Endpoints
+- name: Environments
+- name: Organization
+security:
+- Token_endpoint: []

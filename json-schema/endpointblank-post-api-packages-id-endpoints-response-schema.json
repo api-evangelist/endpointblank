@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/endpointblank/main/json-schema/endpointblank-post-api-packages-id-endpoints-response-schema.json",
+  "title": "PostApiPackagesIdEndpointsResponse",
+  "x-generated": "2026-10-16",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostApiPackagesIdEndpointsResponse",
+  "type": "object",
+  "properties": {
+    "201": {
+      "type": "string",
+      "description": "The endpoint was added"
+    },
+    "401": {
+      "type": "string",
+      "description": "Missing, invalid or revoked key"
+    },
+    "403": {
+      "type": "string",
+      "description": "Read-only key"
+    },
+    "404": {
+      "type": "string",
+      "description": "Package not found"
+    },
+    "422": {
+      "type": "string",
+      "description": "Invalid fields, an id that does not exist, or already in the package"
+    },
+    "429": {
+      "type": "string",
+      "description": "Rate limited"
+    }
+  }
+}

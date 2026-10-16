@@ -1,0 +1,214 @@
+generated: '2026-10-16'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/_ae-authored/endpointblank-openapi-generated.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: No MCP server was found. The pre-flight posted tools/list to /mcp on api.endpointblank.com, endpointblank.com; verdict absent. Candidate
+  tools below are derived from the 45 operation(s) in the provider's own OpenAPI (40 listed); they describe what a server WOULD expose, not one
+  that exists.
+tools:
+- name: get_well_known_oauth_protected_resource_mcp
+  operationId: get_well_known_oauth_protected_resource_mcp
+  method: GET
+  path: /.well-known/oauth-protected-resource/mcp
+  description: GET /.well-known/oauth-protected-resource/mcp
+- name: get_agent_oauth_authorize
+  operationId: get_agent_oauth_authorize
+  method: GET
+  path: /agent-oauth/authorize
+  description: GET /agent-oauth/authorize
+- name: post_agent_oauth_agentoauthid
+  operationId: post_agent_oauth_agentoauthid
+  method: POST
+  path: /agent-oauth/{agentoauthid}
+  description: Register
+- name: post_api_authorize
+  operationId: post_api_authorize
+  method: POST
+  path: /api/authorize
+  description: Intake endpoint used to verify bearer tokens (POST /api/authorize).
+- name: post_api_v1_clients
+  operationId: post_api_v1_clients
+  method: POST
+  path: /api/v1/clients
+  description: POST /api/v1/clients creates a client or sends an email invite.
+- name: patch_api_v1_clients_id
+  operationId: patch_api_v1_clients_id
+  method: PATCH
+  path: /api/v1/clients/{id}
+  description: Update a client (PATCH /api/v1/clients/:id) is mentioned for owner_email changes.
+- name: post_api_v1_clients_client_id_claim_invites
+  operationId: post_api_v1_clients_clientId_claim_invites
+  method: POST
+  path: /api/v1/clients/{clientId}/claim_invites
+  description: POST /api/v1/clients/{client_id}/claim_invites emails a claim invite to a managed client.
+- name: get_api_v1_organization
+  operationId: get_api_v1_organization
+  method: GET
+  path: /api/v1/organization
+  description: GET /api/v1/organization shows which organization and key you are using.
+- name: get_api_packages
+  operationId: get_api_packages
+  method: GET
+  path: /api_packages
+  description: List API packages
+- name: post_api_packages
+  operationId: post_api_packages
+  method: POST
+  path: /api_packages
+  description: POST /api_packages
+- name: delete_api_packages_id
+  operationId: delete_api_packages_id
+  method: DELETE
+  path: /api_packages/{id}
+  description: DELETE /api_packages/{id}
+- name: get_api_packages_id
+  operationId: get_api_packages_id
+  method: GET
+  path: /api_packages/{id}
+  description: GET /api_packages/{id}
+- name: patch_api_packages_id
+  operationId: patch_api_packages_id
+  method: PATCH
+  path: /api_packages/{id}
+  description: PATCH /api_packages/{id}
+- name: get_api_packages_id_endpoints
+  operationId: get_api_packages_id_endpoints
+  method: GET
+  path: /api_packages/{id}/endpoints
+  description: GET /api_packages/{id}/endpoints
+- name: post_api_packages_id_endpoints
+  operationId: post_api_packages_id_endpoints
+  method: POST
+  path: /api_packages/{id}/endpoints
+  description: POST /api_packages/{id}/endpoints
+- name: delete_api_packages_id_endpoints_access_id
+  operationId: delete_api_packages_id_endpoints_accessId
+  method: DELETE
+  path: /api_packages/{id}/endpoints/{accessId}
+  description: DELETE /api_packages/{id}/endpoints/{accessId}
+- name: get_applications
+  operationId: get_applications
+  method: GET
+  path: /applications
+  description: List applications
+- name: post_applications
+  operationId: post_applications
+  method: POST
+  path: /applications
+  description: Create an application
+- name: get_applications_application_id_environments
+  operationId: get_applications_applicationId_environments
+  method: GET
+  path: /applications/{applicationId}/environments
+  description: List the environments an application runs in
+- name: post_applications_application_id_environments
+  operationId: post_applications_applicationId_environments
+  method: POST
+  path: /applications/{applicationId}/environments
+  description: Place an application in an environment at a base URL
+- name: delete_applications_application_id_environments_id
+  operationId: delete_applications_applicationId_environments_id
+  method: DELETE
+  path: /applications/{applicationId}/environments/{id}
+  description: Remove an application from an environment
+- name: delete_applications_id
+  operationId: delete_applications_id
+  method: DELETE
+  path: /applications/{id}
+  description: Delete an application
+- name: get_applications_id
+  operationId: get_applications_id
+  method: GET
+  path: /applications/{id}
+  description: Get an application
+- name: patch_applications_id
+  operationId: patch_applications_id
+  method: PATCH
+  path: /applications/{id}
+  description: Rename an application or change whether it is public
+- name: post_callback
+  operationId: post_callback
+  method: POST
+  path: /callback
+  description: POST /callback
+- name: post_clients
+  operationId: post_clients
+  method: POST
+  path: /clients
+  description: Invite a client
+- name: post_clients_client_id_credentials_id_rotate
+  operationId: post_clients_clientId_credentials_id_rotate
+  method: POST
+  path: /clients/{clientId}/credentials/{id}/rotate
+  description: 'Managed client: Issue a new secret; the old one works for the grace window'
+- name: get_clients_client_id_environments
+  operationId: get_clients_clientId_environments
+  method: GET
+  path: /clients/{clientId}/environments
+  description: 'Managed client: List environments'
+- name: delete_clients_client_id_environments_id
+  operationId: delete_clients_clientId_environments_id
+  method: DELETE
+  path: /clients/{clientId}/environments/{id}
+  description: 'Managed client: Delete an environment'
+- name: get_clients_client_id_environments_id
+  operationId: get_clients_clientId_environments_id
+  method: GET
+  path: /clients/{clientId}/environments/{id}
+  description: 'Managed client: Get an environment'
+- name: patch_clients_client_id_environments_id
+  operationId: patch_clients_clientId_environments_id
+  method: PATCH
+  path: /clients/{clientId}/environments/{id}
+  description: 'Managed client: Update an environment'
+- name: delete_clients_client_id_invite
+  operationId: delete_clients_clientId_invite
+  method: DELETE
+  path: /clients/{clientId}/invite
+  description: DELETE /clients/{client_id}/invite revokes an email invite for a client.
+- name: post_clients_client_id_invite_link
+  operationId: post_clients_clientId_invite_link
+  method: POST
+  path: /clients/{clientId}/invite/link
+  description: POST /clients/{client_id}/invite/link makes a new invite link for a client.
+- name: post_clients_client_id_id
+  operationId: post_clients_clientId_id
+  method: POST
+  path: /clients/{clientId}/{id}
+  description: Invite your customer to claim a managed client
+- name: delete_clients_id
+  operationId: delete_clients_id
+  method: DELETE
+  path: /clients/{id}
+  description: DELETE /clients/{id} removes a client; intake may require retry if steps were partially completed.
+- name: get_clients_id
+  operationId: get_clients_id
+  method: GET
+  path: /clients/{id}
+  description: Get a client
+- name: patch_clients_id
+  operationId: patch_clients_id
+  method: PATCH
+  path: /clients/{id}
+  description: PATCH /clients/{id} updates a client, e.g., to set owner_email.
+- name: get_credentials
+  operationId: get_credentials
+  method: GET
+  path: /credentials
+  description: List runtime client credentials (metadata only, never a secret)
+- name: get_endpoints
+  operationId: get_endpoints
+  method: GET
+  path: /endpoints
+  description: List the organization's endpoints
+- name: get_environments
+  operationId: get_environments
+  method: GET
+  path: /environments
+  description: List environments

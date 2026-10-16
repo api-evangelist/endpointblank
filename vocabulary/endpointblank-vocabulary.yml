@@ -1,0 +1,250 @@
+generated: '2026-10-16'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/endpointblank-openapi-generated.yml
+vocabulary:
+  name: Bengal Technologies Domain Vocabulary
+  description: 'Terms declared by Bengal Technologies''s own API contract: its resource groups, objects and enumerations, with the contract''s
+    definitions. Derived, not authored.'
+  version: '2026-10-16'
+  terms:
+  - term: GetWellKnownOauthProtectedResourceMcpResponse
+    definition: 'Object declared by the contract with fields: client_id, token_endpoint_auth_method.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/GetWellKnownOauthProtectedResourceMcpResponse
+  - term: PostAgentOauthAgentoauthidRequest
+    definition: 'Object declared by the contract with fields: redirect_uris, client_name, grant_types, response_types.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostAgentOauthAgentoauthidRequest
+  - term: PostAgentOauthAgentoauthidResponse
+    definition: 'Object declared by the contract with fields: client_id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostAgentOauthAgentoauthidResponse
+  - term: GetApiPackagesResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 401, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/GetApiPackagesResponse
+  - term: PostApiPackagesRequest
+    definition: 'Object declared by the contract with fields: name.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostApiPackagesRequest
+  - term: PostApiPackagesResponse
+    definition: 'Object declared by the contract with fields: 201, 401, 403, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostApiPackagesResponse
+  - term: DeleteApiPackagesIdResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 403, 404, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/DeleteApiPackagesIdResponse
+  - term: GetApiPackagesIdResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 404, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/GetApiPackagesIdResponse
+  - term: PatchApiPackagesIdRequest
+    definition: 'Object declared by the contract with fields: name.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PatchApiPackagesIdRequest
+  - term: PatchApiPackagesIdResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 403, 404, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PatchApiPackagesIdResponse
+  - term: GetApiPackagesIdEndpointsResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 401, 404, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/GetApiPackagesIdEndpointsResponse
+  - term: PostApiPackagesIdEndpointsRequest
+    definition: 'Object declared by the contract with fields: application_id, environment_id, endpoint_id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostApiPackagesIdEndpointsRequest
+  - term: PostApiPackagesIdEndpointsResponse
+    definition: 'Object declared by the contract with fields: 201, 401, 403, 404, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostApiPackagesIdEndpointsResponse
+  - term: DeleteApiPackagesIdEndpointsAccessidResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 403, 404, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/DeleteApiPackagesIdEndpointsAccessidResponse
+  - term: GetApplicationsResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 401, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/GetApplicationsResponse
+  - term: PostApplicationsRequest
+    definition: 'Object declared by the contract with fields: environment_base_urls, name, organization_group_id, public.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostApplicationsRequest
+  - term: PostApplicationsResponse
+    definition: 'Object declared by the contract with fields: 201, 401, 403, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostApplicationsResponse
+  - term: GetApplicationsApplicationidEnvironmentsResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 401, 404, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/GetApplicationsApplicationidEnvironmentsResponse
+  - term: PostApplicationsApplicationidEnvironmentsRequest
+    definition: 'Object declared by the contract with fields: base_url, environment_id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostApplicationsApplicationidEnvironmentsRequest
+  - term: PostApplicationsApplicationidEnvironmentsResponse
+    definition: 'Object declared by the contract with fields: 201, 401, 403, 404, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostApplicationsApplicationidEnvironmentsResponse
+  - term: DeleteApplicationsApplicationidEnvironmentsIdResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 403, 404, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/DeleteApplicationsApplicationidEnvironmentsIdResponse
+  - term: DeleteApplicationsIdResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 403, 404, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/DeleteApplicationsIdResponse
+  - term: GetApplicationsIdResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 404, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/GetApplicationsIdResponse
+  - term: PatchApplicationsIdRequest
+    definition: 'Object declared by the contract with fields: name, public.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PatchApplicationsIdRequest
+  - term: PatchApplicationsIdResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 403, 404, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PatchApplicationsIdResponse
+  - term: PostCallbackRequest
+    definition: 'Object declared by the contract with fields: client_name, redirect_uris.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostCallbackRequest
+  - term: PostCallbackResponse
+    definition: 'Object declared by the contract with fields: client_id, token_endpoint_auth_method.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostCallbackResponse
+  - term: PostClientsRequest
+    definition: 'Object declared by the contract with fields: name, contacts, email, grants, managed, owner_email, packages.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostClientsRequest
+  - term: PostClientsResponse
+    definition: 'Object declared by the contract with fields: 201, 401, 402, 403, 409, 422, 429, 503.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostClientsResponse
+  - term: PostClientsClientidCredentialsIdRotateResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 403, 404, 409, 422, 429, 503.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostClientsClientidCredentialsIdRotateResponse
+  - term: GetClientsClientidEnvironmentsResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 401, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/GetClientsClientidEnvironmentsResponse
+  - term: DeleteClientsClientidEnvironmentsIdResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 403, 404, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/DeleteClientsClientidEnvironmentsIdResponse
+  - term: GetClientsClientidEnvironmentsIdResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 404, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/GetClientsClientidEnvironmentsIdResponse
+  - term: PatchClientsClientidEnvironmentsIdRequest
+    definition: 'Object declared by the contract with fields: domain, is_default, name.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PatchClientsClientidEnvironmentsIdRequest
+  - term: PatchClientsClientidEnvironmentsIdResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 403, 404, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PatchClientsClientidEnvironmentsIdResponse
+  - term: PostClientsClientidIdRequest
+    definition: 'Object declared by the contract with fields: email, return_to.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostClientsClientidIdRequest
+  - term: PostClientsClientidIdResponse
+    definition: 'Object declared by the contract with fields: 201, 401, 403, 404, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostClientsClientidIdResponse
+  - term: GetClientsIdResponse
+    definition: 'Object declared by the contract with fields: client.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/GetClientsIdResponse
+  - term: GetCredentialsResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 401, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/GetCredentialsResponse
+  - term: GetEndpointsResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 401, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/GetEndpointsResponse
+  - term: GetEnvironmentsResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 401, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/GetEnvironmentsResponse
+  - term: PostEnvironmentsRequest
+    definition: 'Object declared by the contract with fields: domain, name, is_default.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostEnvironmentsRequest
+  - term: PostEnvironmentsResponse
+    definition: 'Object declared by the contract with fields: 201, 401, 403, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PostEnvironmentsResponse
+  - term: DeleteEnvironmentsIdResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 403, 404, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/DeleteEnvironmentsIdResponse
+  - term: GetEnvironmentsIdResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 404, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/GetEnvironmentsIdResponse
+  - term: PatchEnvironmentsIdRequest
+    definition: 'Object declared by the contract with fields: domain, is_default, name.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PatchEnvironmentsIdRequest
+  - term: PatchEnvironmentsIdResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 403, 404, 422, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/PatchEnvironmentsIdResponse
+  - term: GetOrganizationResponse
+    definition: 'Object declared by the contract with fields: 200, 401, 429.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/GetOrganizationResponse

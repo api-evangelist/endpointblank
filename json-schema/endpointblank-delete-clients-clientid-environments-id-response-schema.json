@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/endpointblank/main/json-schema/endpointblank-delete-clients-clientid-environments-id-response-schema.json",
+  "title": "DeleteClientsClientidEnvironmentsIdResponse",
+  "x-generated": "2026-10-16",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/endpointblank-openapi-generated.yml#/components/schemas/DeleteClientsClientidEnvironmentsIdResponse",
+  "type": "object",
+  "properties": {
+    "200": {
+      "type": "string",
+      "description": "The environment was deleted"
+    },
+    "401": {
+      "type": "string",
+      "description": "Missing, invalid or revoked key"
+    },
+    "403": {
+      "type": "string",
+      "description": "Read-only key"
+    },
+    "404": {
+      "type": "string",
+      "description": "Not found"
+    },
+    "422": {
+      "type": "string",
+      "description": "Protected, still in use, or intake refused the delete"
+    },
+    "429": {
+      "type": "string",
+      "description": "Rate limited"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+generated: '2026-10-16'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://endpointblank.com/pricing
+sources:
+- https://endpointblank.com/pricing
+name: Bengal Technologies pricing
+audience: business-product
+pricing_basis: per-seat
+plans:
+- name: Free
+  price_text: Free
+  description: forever
+- name: Starter
+  price_text: $49 /mo
+  price: 49
+- name: Professional
+  price_text: $199 /mo
+  price: 199
+- name: Business
+  price_text: $599 /mo
+  price: 599
+- name: Enterprise
+  price_text: From $999/mo
+  price: 999
+docs: https://endpointblank.com/pricing

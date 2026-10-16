@@ -1,0 +1,26 @@
+generated: '2026-10-16'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://endpointblank.com/docs/agent-sign-in
+sources:
+- https://endpointblank.com/docs/agent-sign-in
+- https://endpointblank.com/docs/credentials
+- https://endpointblank.com/docs/quickstart
+- https://endpointblank.com/docs/api-concepts
+description: Authentication methods as published on the EndPointBlank documentation.
+schemes:
+- type: oauth2
+  name: Agent OAuth
+  evidence: EndPointBlank is an OAuth 2.1 authorization server for AI agents such as MCP clients.
+  flows:
+  - authorization_code
+  - refresh_token
+  authorize_url: https://app.endpointblank.com/agent-oauth/authorize
+  how_to_obtain: Dynamic client registration via POST to https://app.endpointblank.com/agent-oauth/register returns a client_id; no client secret
+    is issued.
+- type: oauth2
+  name: Token endpoint
+  evidence: Send no client secret and no Authorization header.
+  token_url: https://app.endpointblank.com/agent-oauth/token
+  how_to_obtain: Use the client_id obtained from registration; include it in the request body.
+docs: https://endpointblank.com/docs/agent-sign-in

@@ -1,0 +1,19 @@
+generated: '2026-10-16'
+method: derived
+generator: derive-conformance.py
+source: openapi/ (1 document(s), 28 mutating operations)
+idempotency:
+  scope:
+  - post_api_packages
+  - post_api_packages_id_endpoints
+  - post_applications
+  - post_applications_applicationId_environments
+  - post_clients
+  - post_clients_clientId_credentials_id_rotate
+  - post_clients_clientId_id
+  - post_environments
+  coverage: partial
+  header: Idempotency-Key
+  mechanism: request header / body token declared in the OpenAPI
+  evidence: Idempotency-Key on 8 of 28 mutating operations
+  verified: derived

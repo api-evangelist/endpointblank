@@ -1,23 +1,125 @@
 aid: endpointblank
+
 name: Bengal Technologies
-description: 'Bengal Technologies is a company surfaced via the API Evangelist harvest backlog (source:
-  g2-catalog) and added to the network as a stub for full-pipeline profiling.'
+
+image: https://endpointblank.com/images/og-default.png
+
+description: Bengal Technologies provides a platform for API lifecycle management, enabling versioning, deprecation scheduling, and machine‑to‑machine
+  authentication. Their portal lets developers register applications, obtain scoped credentials, and monitor usage across multiple API versions,
+  with built‑in logging, alerts, and SDKs for popular languages. The service aims to simplify API governance without breaking existing clients.
+
 url: https://raw.githubusercontent.com/api-evangelist/endpointblank/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-16 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-16'
+
 modified: '2026-10-16'
+
 tags:
 - Company
-apis: []
+- API Management
+- Versioning
+- Authentication
+- Monitoring
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Plans
+  url: plans/endpointblank-plans-pricing.yml
+- type: Spectral
+  url: rules/endpointblank-rules.yml
+- type: JSONLD
+  url: json-ld/endpointblank-context.jsonld
+- type: Vocabulary
+  url: vocabulary/endpointblank-vocabulary.yml
+- type: DataModel
+  url: data-model/endpointblank-data-model.yml
+- type: Idempotency
+  url: conventions/endpointblank-conventions.yml
+- type: Conventions
+  url: conventions/endpointblank-conventions.yml
+- type: Authentication
+  url: authentication/endpointblank-authentication.yml
+- type: Conformance
+  url: conformance/endpointblank-conformance.yml
+- type: WellKnown
+  url: well-known/endpointblank-well-known.yml
+- type: Hosts
+  url: hosts/endpointblank-hosts.yml
+- type: SDKs
+  url: packages/endpointblank-packages.yml
+- type: Packages
+  url: packages/endpointblank-packages.yml
+- type: GettingStarted
+  url: https://endpointblank.com/docs/quickstart
+- type: OAuthScopes
+  url: scopes/endpointblank-scopes.yml
+- type: DomainSecurity
+  url: security/endpointblank-domain-security.yml
 - type: Website
   url: https://endpointblank.com/
+- type: Documentation
+  url: https://endpointblank.com/docs
+- type: Pricing
+  url: https://endpointblank.com/pricing
+- type: TermsOfService
+  url: https://endpointblank.com/terms
+- type: PrivacyPolicy
+  url: https://endpointblank.com/privacy
+- type: SignUp
+  url: https://endpointblank.com/users/register
+
+apis:
+- aid: endpointblank:endpointblank-api
+  name: Bengal Technologies API
+  description: 'Bengal Technologies API as documented publicly: 45 operations. Contract generated from the documentation by API Evangelist (2026-10-16);
+    not the provider''s own document.'
+  humanURL: https://endpointblank.com/docs/management-api
+  baseURL: https://app.endpointblank.com/api/v1
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/endpointblank-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-clients-clientid-credentials-id-rotate-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-clients-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-agent-oauth-agentoauthid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-api-packages-id-endpoints-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-applications-applicationid-environments-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-delete-clients-clientid-environments-id-response-schema.json
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-10-16'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://endpointblank.com/
+    status: 200
+x-enrichment:
+  date: '2026-10-16'
+  status: enriched
+  artifacts_added: 25
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

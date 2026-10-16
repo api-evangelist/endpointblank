@@ -1,0 +1,11 @@
+generated: '2026-10-16'
+method: derived
+source: openapi/endpointblank-openapi-generated.yml
+schemes:
+- name: Token_endpoint
+  source: openapi/endpointblank-openapi-generated.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://app.endpointblank.com/agent-oauth/token
+scopes:
+  - default

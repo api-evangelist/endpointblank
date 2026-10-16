@@ -1,0 +1,158 @@
+{
+  "@context": {
+    "@vocab": "https://endpointblank.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "endpointblank": "https://endpointblank.com/schema#",
+    "GetWellKnownOauthProtectedResourceMcpResponse": "endpointblank:GetWellKnownOauthProtectedResourceMcpResponse",
+    "client_id": {
+      "@id": "endpointblank:client_id",
+      "@type": "xsd:string"
+    },
+    "token_endpoint_auth_method": {
+      "@id": "endpointblank:token_endpoint_auth_method",
+      "@type": "xsd:string"
+    },
+    "PostAgentOauthAgentoauthidRequest": "endpointblank:PostAgentOauthAgentoauthidRequest",
+    "redirect_uris": {
+      "@id": "endpointblank:redirect_uris",
+      "@container": "@list"
+    },
+    "client_name": {
+      "@id": "endpointblank:client_name",
+      "@type": "xsd:string"
+    },
+    "grant_types": {
+      "@id": "endpointblank:grant_types",
+      "@container": "@list"
+    },
+    "response_types": {
+      "@id": "endpointblank:response_types",
+      "@container": "@list"
+    },
+    "PostAgentOauthAgentoauthidResponse": "endpointblank:PostAgentOauthAgentoauthidResponse",
+    "GetApiPackagesResponse": "endpointblank:GetApiPackagesResponse",
+    "PostApiPackagesRequest": "endpointblank:PostApiPackagesRequest",
+    "name": {
+      "@id": "endpointblank:name",
+      "@type": "xsd:string"
+    },
+    "PostApiPackagesResponse": "endpointblank:PostApiPackagesResponse",
+    "DeleteApiPackagesIdResponse": "endpointblank:DeleteApiPackagesIdResponse",
+    "GetApiPackagesIdResponse": "endpointblank:GetApiPackagesIdResponse",
+    "PatchApiPackagesIdRequest": "endpointblank:PatchApiPackagesIdRequest",
+    "PatchApiPackagesIdResponse": "endpointblank:PatchApiPackagesIdResponse",
+    "GetApiPackagesIdEndpointsResponse": "endpointblank:GetApiPackagesIdEndpointsResponse",
+    "PostApiPackagesIdEndpointsRequest": "endpointblank:PostApiPackagesIdEndpointsRequest",
+    "application_id": {
+      "@id": "endpointblank:application_id",
+      "@type": "xsd:string"
+    },
+    "environment_id": {
+      "@id": "endpointblank:environment_id",
+      "@type": "xsd:string"
+    },
+    "endpoint_id": {
+      "@id": "endpointblank:endpoint_id",
+      "@type": "xsd:string"
+    },
+    "PostApiPackagesIdEndpointsResponse": "endpointblank:PostApiPackagesIdEndpointsResponse",
+    "DeleteApiPackagesIdEndpointsAccessidResponse": "endpointblank:DeleteApiPackagesIdEndpointsAccessidResponse",
+    "GetApplicationsResponse": "endpointblank:GetApplicationsResponse",
+    "PostApplicationsRequest": "endpointblank:PostApplicationsRequest",
+    "environment_base_urls": {
+      "@id": "endpointblank:environment_base_urls"
+    },
+    "organization_group_id": {
+      "@id": "endpointblank:organization_group_id",
+      "@type": "xsd:string"
+    },
+    "public": {
+      "@id": "endpointblank:public",
+      "@type": "xsd:boolean"
+    },
+    "PostApplicationsResponse": "endpointblank:PostApplicationsResponse",
+    "GetApplicationsApplicationidEnvironmentsResponse": "endpointblank:GetApplicationsApplicationidEnvironmentsResponse",
+    "PostApplicationsApplicationidEnvironmentsRequest": "endpointblank:PostApplicationsApplicationidEnvironmentsRequest",
+    "base_url": {
+      "@id": "endpointblank:base_url",
+      "@type": "xsd:string"
+    },
+    "PostApplicationsApplicationidEnvironmentsResponse": "endpointblank:PostApplicationsApplicationidEnvironmentsResponse",
+    "DeleteApplicationsApplicationidEnvironmentsIdResponse": "endpointblank:DeleteApplicationsApplicationidEnvironmentsIdResponse",
+    "DeleteApplicationsIdResponse": "endpointblank:DeleteApplicationsIdResponse",
+    "GetApplicationsIdResponse": "endpointblank:GetApplicationsIdResponse",
+    "PatchApplicationsIdRequest": "endpointblank:PatchApplicationsIdRequest",
+    "PatchApplicationsIdResponse": "endpointblank:PatchApplicationsIdResponse",
+    "PostCallbackRequest": "endpointblank:PostCallbackRequest",
+    "PostCallbackResponse": "endpointblank:PostCallbackResponse",
+    "PostClientsRequest": "endpointblank:PostClientsRequest",
+    "contacts": {
+      "@id": "endpointblank:contacts",
+      "@container": "@list"
+    },
+    "email": {
+      "@id": "endpointblank:email",
+      "@type": "xsd:string"
+    },
+    "grants": {
+      "@id": "endpointblank:grants",
+      "@container": "@list"
+    },
+    "managed": {
+      "@id": "endpointblank:managed",
+      "@type": "xsd:boolean"
+    },
+    "owner_email": {
+      "@id": "endpointblank:owner_email",
+      "@type": "xsd:string"
+    },
+    "packages": {
+      "@id": "endpointblank:packages",
+      "@container": "@list"
+    },
+    "PostClientsResponse": "endpointblank:PostClientsResponse",
+    "PostClientsClientidCredentialsIdRotateResponse": "endpointblank:PostClientsClientidCredentialsIdRotateResponse",
+    "GetClientsClientidEnvironmentsResponse": "endpointblank:GetClientsClientidEnvironmentsResponse",
+    "DeleteClientsClientidEnvironmentsIdResponse": "endpointblank:DeleteClientsClientidEnvironmentsIdResponse",
+    "GetClientsClientidEnvironmentsIdResponse": "endpointblank:GetClientsClientidEnvironmentsIdResponse",
+    "PatchClientsClientidEnvironmentsIdRequest": "endpointblank:PatchClientsClientidEnvironmentsIdRequest",
+    "domain": {
+      "@id": "endpointblank:domain",
+      "@type": "xsd:string"
+    },
+    "is_default": {
+      "@id": "endpointblank:is_default",
+      "@type": "xsd:boolean"
+    },
+    "PatchClientsClientidEnvironmentsIdResponse": "endpointblank:PatchClientsClientidEnvironmentsIdResponse",
+    "PostClientsClientidIdRequest": "endpointblank:PostClientsClientidIdRequest",
+    "return_to": {
+      "@id": "endpointblank:return_to",
+      "@type": "xsd:string"
+    },
+    "PostClientsClientidIdResponse": "endpointblank:PostClientsClientidIdResponse",
+    "GetClientsIdResponse": "endpointblank:GetClientsIdResponse",
+    "client": {
+      "@id": "endpointblank:client"
+    },
+    "GetCredentialsResponse": "endpointblank:GetCredentialsResponse",
+    "GetEndpointsResponse": "endpointblank:GetEndpointsResponse",
+    "GetEnvironmentsResponse": "endpointblank:GetEnvironmentsResponse",
+    "PostEnvironmentsRequest": "endpointblank:PostEnvironmentsRequest",
+    "PostEnvironmentsResponse": "endpointblank:PostEnvironmentsResponse",
+    "DeleteEnvironmentsIdResponse": "endpointblank:DeleteEnvironmentsIdResponse",
+    "GetEnvironmentsIdResponse": "endpointblank:GetEnvironmentsIdResponse",
+    "PatchEnvironmentsIdRequest": "endpointblank:PatchEnvironmentsIdRequest",
+    "PatchEnvironmentsIdResponse": "endpointblank:PatchEnvironmentsIdResponse",
+    "GetOrganizationResponse": "endpointblank:GetOrganizationResponse"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Bengal Technologies API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Bengal Technologies's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-16) from openapi/_ae-authored/endpointblank-openapi-generated.yml.",
+  "dcterms:created": "2026-10-16",
+  "dcterms:source": [
+    "openapi/_ae-authored/endpointblank-openapi-generated.yml"
+  ]
+}
