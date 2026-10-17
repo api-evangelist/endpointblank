@@ -1,0 +1,77 @@
+openapi: 3.2.0
+info:
+  title: Bengal Technologies Organization API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 45 operation(s) read from 3 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Bengal Technologies has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 3
+    documentation: 42
+    pages-with-code: 1
+    pages-read: 3
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://endpointblank.com/docs/management-api
+  - https://endpointblank.com/docs/agent-sign-in
+  - https://endpointblank.com/docs/management-api-reference
+servers:
+- url: https://app.endpointblank.com/api/v1
+security:
+- Token_endpoint: []
+tags:
+- name: Organization
+paths:
+  /api/v1/organization:
+    get:
+      operationId: get_api_v1_organization
+      tags:
+      - Organization
+      summary: GET /api/v1/organization shows which organization and key you are using
+      x-source: https://endpointblank.com/docs/management-api
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /organization:
+    get:
+      operationId: get_organization
+      tags:
+      - Organization
+      summary: The organization this key belongs to
+      x-source: https://endpointblank.com/docs/management-api-reference
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetOrganizationResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    GetOrganizationResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The organization and the key used
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '429':
+          type: string
+          description: Rate limited
+  securitySchemes:
+    Token_endpoint:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://app.endpointblank.com/agent-oauth/token
+          scopes: {}
+      x-source: https://endpointblank.com/docs/agent-sign-in

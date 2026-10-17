@@ -1,0 +1,103 @@
+openapi: 3.2.0
+info:
+  title: Bengal Technologies Agent Oauth API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 45 operation(s) read from 3 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Bengal Technologies has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 3
+    documentation: 42
+    pages-with-code: 1
+    pages-read: 3
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://endpointblank.com/docs/management-api
+  - https://endpointblank.com/docs/agent-sign-in
+  - https://endpointblank.com/docs/management-api-reference
+servers:
+- url: https://app.endpointblank.com/api/v1
+security:
+- Token_endpoint: []
+tags:
+- name: Agent Oauth
+paths:
+  /agent-oauth/authorize:
+    get:
+      operationId: get_agent_oauth_authorize
+      tags:
+      - Agent Oauth
+      summary: GET /agent-oauth/authorize
+      x-source: https://endpointblank.com/docs/agent-sign-in
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl \n For agent developers \n Discovery \n Find the authorization server \n Call the provider's API without a token. An MCP server answers 401 and names its protected resource metadata (RFC 9728), whose authorization_servers lists EndPointBlank's issuer. Then read the authorization server metadata (RFC 8414) at /.well-known/oauth-authorization-server on the issuer. It needs no credentials and allows"
+  /agent-oauth/{agentoauthid}:
+    post:
+      operationId: post_agent_oauth_agentoauthid
+      tags:
+      - Agent Oauth
+      summary: Register
+      x-source: https://endpointblank.com/docs/agent-sign-in
+      parameters:
+      - name: agentoauthid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostAgentOauthAgentoauthidRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostAgentOauthAgentoauthidResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at agentoauthId
+components:
+  schemas:
+    PostAgentOauthAgentoauthidResponse:
+      type: object
+      properties:
+        client_id:
+          type: string
+          description: Issued client identifier.
+    PostAgentOauthAgentoauthidRequest:
+      type: object
+      properties:
+        redirect_uris:
+          type: array
+          description: One to five HTTPS URLs or loopback HTTP URLs, each ≤2,000 bytes.
+        client_name:
+          type: string
+          description: Up to 200 characters, no control or format characters.
+        grant_types:
+          type: array
+          description: If given, only authorization_code and refresh_token.
+        response_types:
+          type: array
+          description: If given, only code.
+      required:
+      - redirect_uris
+  securitySchemes:
+    Token_endpoint:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://app.endpointblank.com/agent-oauth/token
+          scopes: {}
+      x-source: https://endpointblank.com/docs/agent-sign-in

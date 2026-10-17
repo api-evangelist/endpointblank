@@ -1,0 +1,430 @@
+openapi: 3.2.0
+info:
+  title: Bengal Technologies Api Packages API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 45 operation(s) read from 3 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Bengal Technologies has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 3
+    documentation: 42
+    pages-with-code: 1
+    pages-read: 3
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://endpointblank.com/docs/management-api
+  - https://endpointblank.com/docs/agent-sign-in
+  - https://endpointblank.com/docs/management-api-reference
+servers:
+- url: https://app.endpointblank.com/api/v1
+security:
+- Token_endpoint: []
+tags:
+- name: Api Packages
+paths:
+  /api_packages:
+    get:
+      operationId: get_api_packages
+      tags:
+      - Api Packages
+      summary: List API packages
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: after
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The next_cursor from the previous page.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiPackagesResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_api_packages
+      tags:
+      - Api Packages
+      summary: POST /api_packages
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Retrying a POST with the same key replays the first answer.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiPackagesRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiPackagesResponse'
+      x-evidence:
+        kind: documentation
+  /api_packages/{id}:
+    delete:
+      operationId: delete_api_packages_id
+      tags:
+      - Api Packages
+      summary: DELETE /api_packages/{id}
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteApiPackagesIdResponse'
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_api_packages_id
+      tags:
+      - Api Packages
+      summary: GET /api_packages/{id}
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiPackagesIdResponse'
+      x-evidence:
+        kind: documentation
+    patch:
+      operationId: patch_api_packages_id
+      tags:
+      - Api Packages
+      summary: PATCH /api_packages/{id}
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchApiPackagesIdRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchApiPackagesIdResponse'
+      x-evidence:
+        kind: documentation
+  /api_packages/{id}/endpoints:
+    get:
+      operationId: get_api_packages_id_endpoints
+      tags:
+      - Api Packages
+      summary: GET /api_packages/{id}/endpoints
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: after
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The next_cursor from the previous page.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiPackagesIdEndpointsResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_api_packages_id_endpoints
+      tags:
+      - Api Packages
+      summary: POST /api_packages/{id}/endpoints
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Idempotency-Key
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Retrying a POST with the same key replays the first answer.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiPackagesIdEndpointsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiPackagesIdEndpointsResponse'
+      x-evidence:
+        kind: documentation
+  /api_packages/{id}/endpoints/{accessId}:
+    delete:
+      operationId: delete_api_packages_id_endpoints_accessId
+      tags:
+      - Api Packages
+      summary: DELETE /api_packages/{id}/endpoints/{accessId}
+      x-source: https://endpointblank.com/docs/management-api-reference
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: accessId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteApiPackagesIdEndpointsAccessidResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PatchApiPackagesIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The API package
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Not found
+        '422':
+          type: string
+          description: Invalid fields, or the name is taken
+        '429':
+          type: string
+          description: Rate limited
+    PatchApiPackagesIdRequest:
+      type: object
+      properties:
+        name:
+          type: string
+      required:
+      - name
+    GetApiPackagesResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: A page of API packages
+        '400':
+          type: string
+          description: Invalid pagination
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '429':
+          type: string
+          description: Rate limited
+    DeleteApiPackagesIdEndpointsAccessidResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Deleted
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Not found
+        '429':
+          type: string
+          description: Rate limited
+    PostApiPackagesIdEndpointsResponse:
+      type: object
+      properties:
+        '201':
+          type: string
+          description: The endpoint was added
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Package not found
+        '422':
+          type: string
+          description: Invalid fields, an id that does not exist, or already in the package
+        '429':
+          type: string
+          description: Rate limited
+    GetApiPackagesIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The API package
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '404':
+          type: string
+          description: Not found
+        '429':
+          type: string
+          description: Rate limited
+    PostApiPackagesRequest:
+      type: object
+      properties:
+        name:
+          type: string
+      required:
+      - name
+    PostApiPackagesResponse:
+      type: object
+      properties:
+        '201':
+          type: string
+          description: The API package
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '422':
+          type: string
+          description: Invalid fields, or the name is taken
+        '429':
+          type: string
+          description: Rate limited
+    PostApiPackagesIdEndpointsRequest:
+      type: object
+      properties:
+        application_id:
+          type: string
+        environment_id:
+          type: string
+        endpoint_id:
+          type: string
+          description: Omit or null for every endpoint of the application.
+      required:
+      - application_id
+      - environment_id
+    GetApiPackagesIdEndpointsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: A page of the package's endpoints
+        '400':
+          type: string
+          description: Invalid pagination
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '404':
+          type: string
+          description: Package not found
+        '429':
+          type: string
+          description: Rate limited
+    DeleteApiPackagesIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Deleted
+        '401':
+          type: string
+          description: Missing, invalid or revoked key
+        '403':
+          type: string
+          description: Read-only key
+        '404':
+          type: string
+          description: Not found
+        '422':
+          type: string
+          description: The package is assigned to clients
+        '429':
+          type: string
+          description: Rate limited
+  securitySchemes:
+    Token_endpoint:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://app.endpointblank.com/agent-oauth/token
+          scopes: {}
+      x-source: https://endpointblank.com/docs/agent-sign-in

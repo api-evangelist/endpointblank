@@ -1,0 +1,48 @@
+openapi: 3.2.0
+info:
+  title: Bengal Technologies Authorize API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 45 operation(s) read from 3 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Bengal Technologies has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 3
+    documentation: 42
+    pages-with-code: 1
+    pages-read: 3
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://endpointblank.com/docs/management-api
+  - https://endpointblank.com/docs/agent-sign-in
+  - https://endpointblank.com/docs/management-api-reference
+servers:
+- url: https://app.endpointblank.com/api/v1
+security:
+- Token_endpoint: []
+tags:
+- name: Authorize
+paths:
+  /api/authorize:
+    post:
+      operationId: post_api_authorize
+      tags:
+      - Authorize
+      summary: Intake endpoint used to verify bearer tokens (POST /api/authorize)
+      x-source: https://endpointblank.com/docs/agent-sign-in
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+components:
+  securitySchemes:
+    Token_endpoint:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://app.endpointblank.com/agent-oauth/token
+          scopes: {}
+      x-source: https://endpointblank.com/docs/agent-sign-in

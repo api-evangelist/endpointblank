@@ -83,18 +83,19 @@ common:
   url: https://endpointblank.com/users/register
 
 apis:
-- aid: endpointblank:endpointblank-api
-  name: Bengal Technologies API
-  description: 'Bengal Technologies API as documented publicly: 45 operations. Contract generated from the documentation by API Evangelist (2026-10-16);
-    not the provider''s own document.'
+- aid: endpointblank:endpointblank-agent-oauth-api
+  name: Bengal Technologies Agent Oauth API
+  description: The Agent Oauth API from Bengal Technologies — 2 operation(s) for agent oauth.
   humanURL: https://endpointblank.com/docs/management-api
   baseURL: https://app.endpointblank.com/api/v1
+  tags:
+  - Agent Oauth
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/endpointblank-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/endpointblank-agent-oauth-api-openapi.yml
   - type: JSONSchema
-    url: json-schema/endpointblank-post-clients-clientid-credentials-id-rotate-response-schema.json
+    url: >-
+      json-schema/endpointblank-post-clients-clientid-credentials-id-rotate-response-schema.json
   - type: JSONSchema
     url: json-schema/endpointblank-post-clients-response-schema.json
   - type: JSONSchema
@@ -102,10 +103,250 @@ apis:
   - type: JSONSchema
     url: json-schema/endpointblank-post-api-packages-id-endpoints-response-schema.json
   - type: JSONSchema
-    url: json-schema/endpointblank-post-applications-applicationid-environments-response-schema.json
+    url: >-
+      json-schema/endpointblank-post-applications-applicationid-environments-response-schema.json
   - type: JSONSchema
     url: json-schema/endpointblank-delete-clients-clientid-environments-id-response-schema.json
-
+- aid: endpointblank:endpointblank-api-packages-api
+  name: Bengal Technologies Api Packages API
+  description: The Api Packages API from Bengal Technologies — 4 operation(s) for api packages.
+  humanURL: https://endpointblank.com/docs/management-api
+  baseURL: https://app.endpointblank.com/api/v1
+  tags:
+  - Api Packages
+  properties:
+  - type: OpenAPI
+    url: openapi/endpointblank-api-packages-api-openapi.yml
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-clients-clientid-credentials-id-rotate-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-clients-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-agent-oauth-agentoauthid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-api-packages-id-endpoints-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-applications-applicationid-environments-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-delete-clients-clientid-environments-id-response-schema.json
+- aid: endpointblank:endpointblank-applications-api
+  name: Bengal Technologies Applications API
+  description: The Applications API from Bengal Technologies — 4 operation(s) for applications.
+  humanURL: https://endpointblank.com/docs/management-api
+  baseURL: https://app.endpointblank.com/api/v1
+  tags:
+  - Applications
+  properties:
+  - type: OpenAPI
+    url: openapi/endpointblank-applications-api-openapi.yml
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-clients-clientid-credentials-id-rotate-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-clients-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-agent-oauth-agentoauthid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-api-packages-id-endpoints-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-applications-applicationid-environments-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-delete-clients-clientid-environments-id-response-schema.json
+- aid: endpointblank:endpointblank-authorize-api
+  name: Bengal Technologies Authorize API
+  description: The Authorize API from Bengal Technologies — 1 operation(s) for authorize.
+  humanURL: https://endpointblank.com/docs/management-api
+  baseURL: https://app.endpointblank.com/api/v1
+  tags:
+  - Authorize
+  properties:
+  - type: OpenAPI
+    url: openapi/endpointblank-authorize-api-openapi.yml
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-clients-clientid-credentials-id-rotate-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-clients-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-agent-oauth-agentoauthid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-api-packages-id-endpoints-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-applications-applicationid-environments-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-delete-clients-clientid-environments-id-response-schema.json
+- aid: endpointblank:endpointblank-callback-api
+  name: Bengal Technologies Callback API
+  description: The Callback API from Bengal Technologies — 1 operation(s) for callback.
+  humanURL: https://endpointblank.com/docs/management-api
+  baseURL: https://app.endpointblank.com/api/v1
+  tags:
+  - Callback
+  properties:
+  - type: OpenAPI
+    url: openapi/endpointblank-callback-api-openapi.yml
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-clients-clientid-credentials-id-rotate-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-clients-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-agent-oauth-agentoauthid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-api-packages-id-endpoints-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-applications-applicationid-environments-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-delete-clients-clientid-environments-id-response-schema.json
+- aid: endpointblank:endpointblank-clients-api
+  name: Bengal Technologies Clients API
+  description: The Clients API from Bengal Technologies — 11 operation(s) for clients.
+  humanURL: https://endpointblank.com/docs/management-api
+  baseURL: https://app.endpointblank.com/api/v1
+  tags:
+  - Clients
+  properties:
+  - type: OpenAPI
+    url: openapi/endpointblank-clients-api-openapi.yml
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-clients-clientid-credentials-id-rotate-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-clients-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-agent-oauth-agentoauthid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-api-packages-id-endpoints-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-applications-applicationid-environments-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-delete-clients-clientid-environments-id-response-schema.json
+- aid: endpointblank:endpointblank-credentials-api
+  name: Bengal Technologies Credentials API
+  description: The Credentials API from Bengal Technologies — 1 operation(s) for credentials.
+  humanURL: https://endpointblank.com/docs/management-api
+  baseURL: https://app.endpointblank.com/api/v1
+  tags:
+  - Credentials
+  properties:
+  - type: OpenAPI
+    url: openapi/endpointblank-credentials-api-openapi.yml
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-clients-clientid-credentials-id-rotate-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-clients-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-agent-oauth-agentoauthid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-api-packages-id-endpoints-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-applications-applicationid-environments-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-delete-clients-clientid-environments-id-response-schema.json
+- aid: endpointblank:endpointblank-endpoints-api
+  name: Bengal Technologies Endpoints API
+  description: The Endpoints API from Bengal Technologies — 1 operation(s) for endpoints.
+  humanURL: https://endpointblank.com/docs/management-api
+  baseURL: https://app.endpointblank.com/api/v1
+  tags:
+  - Endpoints
+  properties:
+  - type: OpenAPI
+    url: openapi/endpointblank-endpoints-api-openapi.yml
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-clients-clientid-credentials-id-rotate-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-clients-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-agent-oauth-agentoauthid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-api-packages-id-endpoints-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-applications-applicationid-environments-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-delete-clients-clientid-environments-id-response-schema.json
+- aid: endpointblank:endpointblank-environments-api
+  name: Bengal Technologies Environments API
+  description: The Environments API from Bengal Technologies — 2 operation(s) for environments.
+  humanURL: https://endpointblank.com/docs/management-api
+  baseURL: https://app.endpointblank.com/api/v1
+  tags:
+  - Environments
+  properties:
+  - type: OpenAPI
+    url: openapi/endpointblank-environments-api-openapi.yml
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-clients-clientid-credentials-id-rotate-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-clients-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-agent-oauth-agentoauthid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-api-packages-id-endpoints-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-applications-applicationid-environments-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-delete-clients-clientid-environments-id-response-schema.json
+- aid: endpointblank:endpointblank-organization-api
+  name: Bengal Technologies Organization API
+  description: The Organization API from Bengal Technologies — 2 operation(s) for organization.
+  humanURL: https://endpointblank.com/docs/management-api
+  baseURL: https://app.endpointblank.com/api/v1
+  tags:
+  - Organization
+  properties:
+  - type: OpenAPI
+    url: openapi/endpointblank-organization-api-openapi.yml
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-clients-clientid-credentials-id-rotate-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-clients-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-agent-oauth-agentoauthid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-api-packages-id-endpoints-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-applications-applicationid-environments-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-delete-clients-clientid-environments-id-response-schema.json
+- aid: endpointblank:endpointblank-well-known-api
+  name: Bengal Technologies .well Known API
+  description: The .well Known API from Bengal Technologies — 1 operation(s) for .well known.
+  humanURL: https://endpointblank.com/docs/management-api
+  baseURL: https://app.endpointblank.com/api/v1
+  tags:
+  - .well Known
+  properties:
+  - type: OpenAPI
+    url: openapi/endpointblank-well-known-api-openapi.yml
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-clients-clientid-credentials-id-rotate-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-clients-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-agent-oauth-agentoauthid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-post-api-packages-id-endpoints-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/endpointblank-post-applications-applicationid-environments-response-schema.json
+  - type: JSONSchema
+    url: json-schema/endpointblank-delete-clients-clientid-environments-id-response-schema.json
 x-coverage:
   state: none
   reason: no-developer-program

@@ -1,0 +1,36 @@
+{
+  "provider": "endpointblank",
+  "sources": [
+    "_ae-authored/endpointblank-openapi-generated.yml"
+  ],
+  "outputs": [
+    "endpointblank-well-known-api-openapi.yml",
+    "endpointblank-agent-oauth-api-openapi.yml",
+    "endpointblank-api-packages-api-openapi.yml",
+    "endpointblank-applications-api-openapi.yml",
+    "endpointblank-authorize-api-openapi.yml",
+    "endpointblank-callback-api-openapi.yml",
+    "endpointblank-clients-api-openapi.yml",
+    "endpointblank-credentials-api-openapi.yml",
+    "endpointblank-endpoints-api-openapi.yml",
+    "endpointblank-environments-api-openapi.yml",
+    "endpointblank-organization-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "endpointblank-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "endpointblank-openapi-generated.yml: tagged paths GET /.well-known/oauth-protected-resource/mcp -> .well Known",
+    "endpointblank-openapi-generated.yml: tagged paths POST /api/authorize -> Authorize",
+    "endpointblank-openapi-generated.yml: tagged paths POST /api/v1/clients -> Clients",
+    "endpointblank-openapi-generated.yml: tagged paths PATCH /api/v1/clients/{id} -> Clients",
+    "endpointblank-openapi-generated.yml: tagged paths POST /api/v1/clients/{clientId}/claim_invites -> Clients",
+    "endpointblank-openapi-generated.yml: tagged paths GET /api/v1/organization -> Organization",
+    "endpointblank-openapi-generated.yml: declared missing tag: .well Known",
+    "endpointblank-openapi-generated.yml: declared missing tag: Authorize",
+    "apis.yml register: written (+11 apis, 11 total)"
+  ],
+  "skipped": []
+}

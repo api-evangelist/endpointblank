@@ -1,0 +1,77 @@
+openapi: 3.2.0
+info:
+  title: Bengal Technologies Callback API
+  version: '2026-10-16'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-16: 45 operation(s) read from 3 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Bengal Technologies has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 3
+    documentation: 42
+    pages-with-code: 1
+    pages-read: 3
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-16'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://endpointblank.com/docs/management-api
+  - https://endpointblank.com/docs/agent-sign-in
+  - https://endpointblank.com/docs/management-api-reference
+servers:
+- url: https://app.endpointblank.com/api/v1
+security:
+- Token_endpoint: []
+tags:
+- name: Callback
+paths:
+  /callback:
+    post:
+      operationId: post_callback
+      tags:
+      - Callback
+      summary: POST /callback
+      x-source: https://endpointblank.com/docs/agent-sign-in
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostCallbackRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostCallbackResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -s "$ISSUER/agent-oauth/register"  -H ''content-type: application/json''  -d ''{"client_name": "Example agent", "redirect_uris": ["http://127.0.0.1:8976/callback"]}'''
+components:
+  schemas:
+    PostCallbackRequest:
+      type: object
+      properties:
+        client_name:
+          type: string
+        redirect_uris:
+          type: array
+          items:
+            type: string
+    PostCallbackResponse:
+      type: object
+      properties:
+        client_id:
+          type: string
+        token_endpoint_auth_method:
+          type: string
+  securitySchemes:
+    Token_endpoint:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://app.endpointblank.com/agent-oauth/token
+          scopes: {}
+      x-source: https://endpointblank.com/docs/agent-sign-in
