@@ -113,6 +113,8 @@ apis:
   humanURL: https://endpointblank.com/docs/management-api
   baseURL: https://app.endpointblank.com/api/v1
   tags:
+  - API Packages
+  tags_raw:
   - Api Packages
   properties:
   - type: OpenAPI
@@ -137,6 +139,8 @@ apis:
   humanURL: https://endpointblank.com/docs/management-api
   baseURL: https://app.endpointblank.com/api/v1
   tags:
+  - Application
+  tags_raw:
   - Applications
   properties:
   - type: OpenAPI
@@ -256,7 +260,8 @@ apis:
   description: The Endpoints API from Bengal Technologies — 1 operation(s) for endpoints.
   humanURL: https://endpointblank.com/docs/management-api
   baseURL: https://app.endpointblank.com/api/v1
-  tags:
+  tags: []
+  tags_raw:
   - Endpoints
   properties:
   - type: OpenAPI
@@ -281,6 +286,8 @@ apis:
   humanURL: https://endpointblank.com/docs/management-api
   baseURL: https://app.endpointblank.com/api/v1
   tags:
+  - Environment
+  tags_raw:
   - Environments
   properties:
   - type: OpenAPI
